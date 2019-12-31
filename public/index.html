@@ -35,7 +35,7 @@ const dox1=document.querySelector("#id2")
         e.preventDefault()
         const search1=search.value
         
-        fetch('http://localhost:3000/weather?location='+search1).then((response)=>{
+        fetch('/weather?location='+search1).then((response)=>{
             response.json().then((data)=>{
                dox.textContent=data.address
                dox1.textContent=data.temperature

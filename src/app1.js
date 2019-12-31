@@ -3,6 +3,7 @@ const path=require('path')
 const geocode=require('../../utils/geocode')
 const forecast=require('../../utils/forecast')
 const app=express()
+const port=process.env.PORT
 // for joining 2 directories 
 const publicDirecPath=path.join(__dirname,'../public')
 app.use(express.static(publicDirecPath))
@@ -41,6 +42,6 @@ app.get('/weather',(req,res)=>{
 app.get('/products',(req,res)=>{
     console.log(req.query)
 })
-app.listen(3000,()=>{
-    console.log('Server is up on port 3000')
+app.listen(port,()=>{
+    console.log('Server is up on port '+port)
 })
